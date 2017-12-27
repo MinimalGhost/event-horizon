@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
+  skip_before_action :authorized, only: [:new, :create]
 
   def new
-    @user = User.new(params[:id])
+    @user = User.new
   end
 
   def show
@@ -13,9 +14,10 @@ class UsersController < ApplicationController
 
     if @user.valid?
       @user.save
+      session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
-      flash[:error] = @user.error.full_messages
+      flash[:error] = @user.errors.full_messages
       render :new
     end
   end
@@ -36,6 +38,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:first_name, :last_name)
+    params.require(:user).permit(:user_name, :password)
   end
 end
