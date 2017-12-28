@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  resources :events, only: [:new, :show, :edit, :update, :create]
+  resources :events, only: [:new, :show, :edit, :index, :update, :create]
   resources :users, only: [:new, :show, :edit, :update, :create]
+  resources :locations, only: [:new, :show, :edit, :index, :update, :create]
+
+  # resources :users do
+  #   resources :rsvps
+  # end
 
   # custom routes and root setup
   get '/signup', to: 'users#new', as: 'signup'

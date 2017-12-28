@@ -1,0 +1,10 @@
+<h3>Location Info</h3>
+<%= @location.name %>
+<ul>
+<% @location.events.each do |event| %>
+  <li><%= event.name %></li>
+<% end %>
+</ul>
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<!-- navigates back to /locations view -->
+<%= link_to 'Back', locations_path %>

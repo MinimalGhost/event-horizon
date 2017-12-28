@@ -1,0 +1,8 @@
+<h3>Event Info</h3>
+<%= @event.name %>
+<%= @event.date %>
+<%= @event.time %>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Delete', event_path(@event), method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Back', events_path %> |

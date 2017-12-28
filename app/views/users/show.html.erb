@@ -1,2 +1,5 @@
 <h3>User Info</h3>
 <p>Username: <%= @user.user_name %></p>
+<%= link_to "Edit", user_path(@user) %> |
+<%= link_to "Event List", events_path %> |
+<%= link_to "Location List", locations_path %>
