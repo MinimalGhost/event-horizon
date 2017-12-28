@@ -9,7 +9,8 @@
   <%= f.text_field :time %>
   <br>
   <%= f.label :location_id %><br />
-  <%= f.select :location_id, Location.all.collect {|l| [ l.name, l.id ] } %>
+  <%= f.collection_select :location_id, Location.all, :id, :name %>
+                      <!-- method, collection, value_method, text_method -->
   <br>
   <%= f.submit %>
 <% end %>
