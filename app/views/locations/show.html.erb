@@ -1,5 +1,7 @@
-<h3>Location Info</h3>
-<%= @location.name %>
+<h2>Location Info</h2>
+<p>Name: <%= @location.name %></p>
+<p>Capacity: <%= @location.capacity %></p>
+<h3>Upcoming Events</h3>
 <ul>
 <% @location.events.each do |event| %>
   <li><%= event.name %></li>

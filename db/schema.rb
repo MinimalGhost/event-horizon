@@ -14,8 +14,8 @@ ActiveRecord::Schema.define(version: 20171227164150) do
 
   create_table "events", force: :cascade do |t|
     t.string "name"
-    t.string "date"
-    t.string "time"
+    t.date "date"
+    t.integer "size"
     t.integer "location_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20171227164150) do
 
   create_table "locations", force: :cascade do |t|
     t.string "name"
+    t.integer "capacity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -30,6 +31,7 @@ ActiveRecord::Schema.define(version: 20171227164150) do
   create_table "rsvps", force: :cascade do |t|
     t.integer "user_id"
     t.integer "event_id"
+    t.boolean "attending"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

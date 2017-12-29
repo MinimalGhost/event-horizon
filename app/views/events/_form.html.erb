@@ -3,10 +3,10 @@
   <%= f.text_field :name %>
   <br>
   <%= f.label :date %>
-  <%= f.text_field :date %>
+  <%= f.date_field :date %>
   <br>
-  <%= f.label :time %>
-  <%= f.text_field :time %>
+  <%= f.label :size %>
+  <%= f.number_field :size %>
   <br>
   <%= f.label :location_id %><br />
   <%= f.collection_select :location_id, Location.all, :id, :name %>
