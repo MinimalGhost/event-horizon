@@ -1,5 +1,13 @@
 <h2>Listing Events</h2>
 <%= link_to 'New event', new_event_path %>
+
+<!-- <p>Search events by location:</p>
+<%= form_tag("/events", method: "get") do %>
+  <%= label_tag(:q, "Search by Location:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %> -->
+
 <table>
   <th>Name</th>
   <th>Location</th>

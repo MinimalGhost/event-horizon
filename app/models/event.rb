@@ -6,6 +6,14 @@ class Event < ApplicationRecord
   validate :location_and_date_cannot_exist
   validate :limit_size
 
+  def self.search(q)
+    if !q.to_s.empty?
+      self.all.select {|event| event.location.name == q.downcase}
+    else
+      self.all
+    end
+  end
+
   def attending
     self.users.count
   end

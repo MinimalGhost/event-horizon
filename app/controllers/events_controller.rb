@@ -1,11 +1,12 @@
 class EventsController < ApplicationController
 
   def index
-    @events = Event.all
+    @events = Event.search(params[:q])
   end
 
   def new
     @event = Event.new
+    @events = Event.all
   end
 
   def show
