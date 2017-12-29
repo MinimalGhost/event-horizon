@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   get '/signin', to: 'sessions#new'
   post '/sessions', to: 'sessions#create'
   delete '/sessions', to: 'sessions#destroy'
+  resources :rsvps, only: [:create]
   root to: 'static#index'
 end

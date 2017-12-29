@@ -10,6 +10,8 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @user = current_user
+    @rsvp = Rsvp.new(user_id: @user.id, event_id: @event.id)
   end
 
   def create
@@ -26,7 +28,10 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.find(params[:id])
+  end
 
+  def update
+    @event = Event.find(params[:id])
     if @event.update(event_params)
       redirect_to event_path(@event)
     else

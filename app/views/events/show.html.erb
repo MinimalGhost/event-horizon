@@ -1,8 +1,19 @@
 <h3>Event Info</h3>
-<%= @event.name %>
-<%= @event.date %>
-<%= @event.time %>
-
+<p>Name: <%= @event.name %></p>
+<p>Date: <%= @event.date %></p>
+<p>Time: <%= @event.time %></p>
+<p>Attending: <%= @event.attending %></p>
+<p>Guest List:</p>
+<ul>
+  <% @event.users.each do |user| %>
+    <li><%= user.user_name %></li>
+  <% end %>
+</ul>
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Delete', event_path(@event), method: :delete, data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'Back', events_path %> |
+<%= link_to 'Back', events_path %>
+<%= form_for @rsvp do |f| %>
+  <%= f.text_field :event_id, type: :hidden %>
+  <%= f.text_field :user_id, type: :hidden %>
+  <%= f.submit "RSVP"%>
+<% end %>
