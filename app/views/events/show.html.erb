@@ -1,19 +1,25 @@
-<h3>Event Info</h3>
-<p>Name: <%= @event.name %></p>
-<p>Date: <%= @event.date %></p>
-<p>Available Slots: <%= @event.size %></p>
-<p>Attending: <%= @event.attending %></p>
-<p>Guest List:</p>
-<ul>
-  <% @event.users.each do |user| %>
-    <li><%= user.user_name %></li>
+<div class="show">
+  <h3>Event Info</h3>
+  <p>Name: <%= @event.name %></p>
+  <p>Date: <%= @event.date %></p>
+  <p>Location: <%= @event.location.name %></p>
+  <p>Available Slots: <%= @event.size - @event.attending %></p>
+
+  <%= link_to 'Edit', edit_event_path(@event) %> |
+  <%= link_to 'Delete', event_path(@event), method: :delete, data: { confirm: 'Are you sure?' } %> |
+  <%= link_to 'Back', events_path %>
+  <%= form_for @rsvp do |f| %>
+    <%= f.text_field :event_id, type: :hidden %>
+    <%= f.text_field :user_id, type: :hidden %>
+    <%= f.submit "RSVP" %>
   <% end %>
-</ul>
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Delete', event_path(@event), method: :delete, data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'Back', events_path %>
-<%= form_for @rsvp do |f| %>
-  <%= f.text_field :event_id, type: :hidden %>
-  <%= f.text_field :user_id, type: :hidden %>
-  <%= f.submit "RSVP" %>
-<% end %>
+</div>
+<div class="guests">
+  <p>Attending: <%= @event.attending %></p>
+  <p>Guest List:</p>
+  <ul>
+    <% @event.users.each do |user| %>
+      <li><%= user.user_name %></li>
+    <% end %>
+  </ul>
+</div>

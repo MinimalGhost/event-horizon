@@ -1,12 +1,23 @@
-<h2>Location Info</h2>
-<p>Name: <%= @location.name %></p>
-<p>Capacity: <%= @location.capacity %></p>
-<h3>Upcoming Events</h3>
-<ul>
-<% @location.events.each do |event| %>
-  <li><%= event.name %></li>
-<% end %>
-</ul>
-<%= link_to 'Edit', edit_location_path(@location) %> |
-<!-- navigates back to /locations view -->
-<%= link_to 'Back', locations_path %>
+<div class="show">
+  <h2>Location Info</h2>
+  <p>Name: <%= @location.name %></p>
+  <p>Capacity: <%= @location.capacity %></p>
+  <h3>Upcoming Events</h3>
+  <table class="table">
+    <th>Name</th>
+    <th>Date</th>
+    <th>Attending</th>
+    <th>Open Slots</th>
+  <% @location.events.each do |event| %>
+  <tr>
+    <td><%= link_to event.name, event_path(event) %></td>
+    <td><%= event.date %></td>
+    <td><%= event.attending %></td>
+    <td><%= event.location.capacity - event.attending %></td>
+  </tr>
+  <% end %>
+  </table>
+  <%= link_to 'Edit', edit_location_path(@location) %> |
+  <!-- navigates back to /locations view -->
+  <%= link_to 'Back', locations_path %>
+</div>

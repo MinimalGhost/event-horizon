@@ -1,0 +1,191 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+body {
+  padding-top: 100px;
+  background: #bbdefb;
+}
+
+.horizon-form h3 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-align: center;
+}
+
+.horizon-form {
+  max-width: 500px;
+  padding: 10px 20px;
+  background: #f4f7f8;
+  margin: 10px auto;
+  padding: 20px;
+  background: #f5f5e5;
+  border-radius: 8px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.horizon-form fieldset {
+  border: none;
+
+}
+.horizon-form legend {
+  font-size: 1.4em;
+  margin-top: 10px;
+
+}
+.horizon-form label {
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 5px;
+
+}
+
+.horizon-form input[type="submit"],
+.horizon-form input[type="button"]
+{
+  position: relative;
+  display: block;
+  padding: 19px 39px 18px 39px;
+  color: #FFF;
+  margin: 0 auto;
+  background: #1abc9c;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  width: 100%;
+  border: 1px solid #16a085;
+  border-width: 1px 1px 3px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+.horizon-form input[type="submit"]:hover,
+.horizon-form input[type="button"]:hover
+{
+    background: #109177;
+}
+
+.show {
+  max-width: 500px;
+  padding: 10px 20px;
+  background: #f4f7f8;
+  margin: 10px auto;
+  padding: 20px;
+  background: #f5f5e5;
+  border-radius: 8px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.show input[type="submit"],
+.show input[type="button"]
+{
+  position: relative;
+  display: block;
+  padding: 19px 39px 18px 39px;
+  color: #FFF;
+  margin: 0 auto;
+  background: #1abc9c;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  width: 100%;
+  border: 1px solid #16a085;
+  border-width: 1px 1px 3px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+.show input[type="submit"]:hover,
+.show input[type="button"]:hover
+{
+    background: #109177;
+}
+
+.show h3 {
+  text-align: center;
+}
+
+.show p {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.2em;
+}
+
+.show ul {
+  list-style-type: none;
+}
+
+.guests {
+  max-width: 500px;
+  padding: 10px 20px;
+  background: #f5f5e5;
+  margin: 10px auto;
+  padding: 20px;
+  background: #f5f5e5;
+  border-radius: 8px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.guests ul {
+  list-style-type: none;
+}
+
+.index {
+  // max-width: 900px;
+  padding: 10px 20px;
+  background: #f4f7f8;
+  margin: 10px auto;
+  padding: 20px;
+  background: #f5f5e5;
+  border-radius: 8px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.index a {
+  color: #1976d2;
+}
+
+.box {
+  // display: inline-block;
+  max-width: 500px;
+  padding: 10px 20px;
+  background: #f4f7f8;
+  margin: 10px auto;
+  padding: 20px;
+  background: #f5f5e5;
+  border-radius: 8px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.box img {
+  width: 65px;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.box h2 {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.box p {
+  margin-left: 40px;
+  display: inline-block;
+}
+
+.guest p {
+    margin-left: 0px;
+}
+
+.guest ul li {
+    list-style-type: none;
+}
