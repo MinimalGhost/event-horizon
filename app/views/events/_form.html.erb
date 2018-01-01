@@ -12,4 +12,11 @@
                       <!-- method, collection, value_method, text_method -->
   <br>
   <%= f.submit %>
+  <% if flash[:error] %>
+    <ul><%=  %>
+    <% flash[:error].each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+    <% end %>
 <% end %>

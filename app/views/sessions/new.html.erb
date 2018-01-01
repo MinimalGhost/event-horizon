@@ -1,13 +1,15 @@
-<% if flash[:error] %>
-  <ul><%=  %>
-  <% flash[:error].each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
-  <% end %>
 
-<%= form_tag sessions_path do %>
-  <%= text_field_tag :user_name, nil, placeholder: "Username" %>
-  <%= password_field_tag :password, nil, placeholder: "Password" %>
-  <%= submit_tag "Sign In" %>
-<% end %>
+<div class="horizon-form">
+  <%= form_tag sessions_path do %>
+    <%= text_field_tag :user_name, nil, placeholder: "Username" %>
+    <%= password_field_tag :password, nil, placeholder: "Password" %>
+    <%= submit_tag "Sign In" %>
+  <% end %>
+  <% if flash[:error] %>
+    <ul><%=  %>
+    <% flash[:error].each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+    <% end %>
+</div>

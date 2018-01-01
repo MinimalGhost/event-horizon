@@ -1,6 +1,6 @@
 <div class="index">
   <h2>Listing Events</h2>
-  <%= link_to 'New event', new_event_path %>
+  <button><%= link_to 'New event', new_event_path %></button>
 
   <!-- <p>Search events by location:</p>
   <%= form_tag("/events", method: "get") do %>
@@ -14,12 +14,14 @@
     <th>Location</th>
     <th>Date</th>
     <th>Going</th>
+    <th>Slots</th>
     <% @events.each do |event| %>
     <tr>
       <td><%= event.name %></td>
       <td><%= event.location.name %></td>
       <td><%= event.date %></td>
       <td><%= event.attending %></td>
+      <td><%= event.size - event.attending %></td>
       <td><%= link_to 'Show', event_path(event) %></td>
       <td><%= link_to 'Edit', edit_event_path(event) %></td>
       <td><%= link_to 'Delete', event_path(event), method: :delete, data: { confirm: 'Are you sure?' } %></td>

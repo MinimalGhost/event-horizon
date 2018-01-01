@@ -140,7 +140,7 @@ body {
 }
 
 .index {
-  // max-width: 900px;
+  max-width: 800px;
   padding: 10px 20px;
   background: #f4f7f8;
   margin: 10px auto;
@@ -148,6 +148,38 @@ body {
   background: #f5f5e5;
   border-radius: 8px;
   font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.index h2 {
+  display: inline-block;
+}
+
+.index button
+{
+  position: relative;
+  display: inline-block;
+  float: right;
+  color: #FFF;
+  margin: 0 auto;
+  background: #1abc9c;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  // width: 100%;
+  border: 1px solid #16a085;
+  border-width: 1px 1px 1px;
+  margin-bottom: 20px;
+  margin-top: 0px;
+  // margin-top: 20px;
+}
+.index button:hover
+{
+    background: #109177;
+}
+
+.index button a {
+  color: #FFF;
+  text-decoration: none;
 }
 
 .index a {
